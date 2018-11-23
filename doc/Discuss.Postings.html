@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.1">
+    <title>Discuss.Postings – discuss v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
+    <script src="dist/sidebar_items-8757b0bd7d.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+discuss      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">discuss v0.0.1</small>
+Discuss.Postings              </h1>
+
+
+        <section id="moduledoc">
+<p>The Postings context.</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#change_comment/1">change_comment(comment)</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking comment changes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#change_topic/1">change_topic(topic)</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking topic changes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_comment/3">create_comment(topic, user, attrs \\ %{})</a>
+  </div>
+    <div class="summary-synopsis"><p>Creates a comment</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_comment_user/3">create_comment_user(topic, user, attrs \\ %{})</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_topic/2">create_topic(user, attrs \\ %{})</a>
+  </div>
+    <div class="summary-synopsis"><p>Creates a topic</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_comment/1">delete_comment(comment)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes a Comment</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_topic/1">delete_topic(topic)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes a Topic</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_comment!/1">get_comment!(id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Gets a single comment</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_topic!/1">get_topic!(id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Gets a single topic</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_topic_comments!/1">get_topic_comments!(id)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_topic_comments_user!/1">get_topic_comments_user!(id)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_comments/0">list_comments()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns the list of comments</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_topics/0">list_topics()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns the list of topics</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_comment/2">update_comment(comment, attrs)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates a comment</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_topic/2">update_topic(topic, attrs)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates a topic</p>
+</div>
+</div>
+  </div>
+          
+        </section>
+
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+<div class="detail" id="change_comment/1">
+    <div class="detail-header">
+    <a href="#change_comment/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">change_comment(comment)</span>
+          </div>
+  <section class="docstring">
+<p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking comment changes.</p>
+<h2 id="change_comment/1-examples" class="section-heading">
+  <a href="#change_comment/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">change_comment</span><span class="p" data-group-id="7520401230-1">(</span><span class="n">comment</span><span class="p" data-group-id="7520401230-1">)</span><span class="w">
+</span><span class="p" data-group-id="7520401230-2">%</span><span class="nc" data-group-id="7520401230-2">Ecto.Changeset</span><span class="p" data-group-id="7520401230-2">{</span><span class="ss">source</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7520401230-3">%</span><span class="nc" data-group-id="7520401230-3">Comment</span><span class="p" data-group-id="7520401230-3">{</span><span class="p" data-group-id="7520401230-3">}</span><span class="p" data-group-id="7520401230-2">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="change_topic/1">
+    <div class="detail-header">
+    <a href="#change_topic/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">change_topic(topic)</span>
+          </div>
+  <section class="docstring">
+<p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking topic changes.</p>
+<h2 id="change_topic/1-examples" class="section-heading">
+  <a href="#change_topic/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">change_topic</span><span class="p" data-group-id="3112744143-1">(</span><span class="n">topic</span><span class="p" data-group-id="3112744143-1">)</span><span class="w">
+</span><span class="p" data-group-id="3112744143-2">%</span><span class="nc" data-group-id="3112744143-2">Ecto.Changeset</span><span class="p" data-group-id="3112744143-2">{</span><span class="ss">source</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3112744143-3">%</span><span class="nc" data-group-id="3112744143-3">Topic</span><span class="p" data-group-id="3112744143-3">{</span><span class="p" data-group-id="3112744143-3">}</span><span class="p" data-group-id="3112744143-2">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="create_comment/3">
+  
+    <span id="create_comment/2"></span>
+  <div class="detail-header">
+    <a href="#create_comment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_comment(topic, user, attrs \\ %{})</span>
+          </div>
+  <section class="docstring">
+<p>Creates a comment.</p>
+<h2 id="create_comment/3-examples" class="section-heading">
+  <a href="#create_comment/3-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_comment</span><span class="p" data-group-id="9304781860-1">(</span><span class="p" data-group-id="9304781860-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="9304781860-2">}</span><span class="p" data-group-id="9304781860-1">)</span><span class="w">
+</span><span class="p" data-group-id="9304781860-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9304781860-4">%</span><span class="nc" data-group-id="9304781860-4">Comment</span><span class="p" data-group-id="9304781860-4">{</span><span class="p" data-group-id="9304781860-4">}</span><span class="p" data-group-id="9304781860-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_comment</span><span class="p" data-group-id="9304781860-5">(</span><span class="p" data-group-id="9304781860-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="9304781860-6">}</span><span class="p" data-group-id="9304781860-5">)</span><span class="w">
+</span><span class="p" data-group-id="9304781860-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9304781860-8">%</span><span class="nc" data-group-id="9304781860-8">Ecto.Changeset</span><span class="p" data-group-id="9304781860-8">{</span><span class="p" data-group-id="9304781860-8">}</span><span class="p" data-group-id="9304781860-7">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="create_comment_user/3">
+  
+    <span id="create_comment_user/2"></span>
+  <div class="detail-header">
+    <a href="#create_comment_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_comment_user(topic, user, attrs \\ %{})</span>
+          </div>
+  <section class="docstring">
+  </section>
+</div>
+<div class="detail" id="create_topic/2">
+  
+    <span id="create_topic/1"></span>
+  <div class="detail-header">
+    <a href="#create_topic/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_topic(user, attrs \\ %{})</span>
+          </div>
+  <section class="docstring">
+<p>Creates a topic.</p>
+<h2 id="create_topic/2-examples" class="section-heading">
+  <a href="#create_topic/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_topic</span><span class="p" data-group-id="4661786973-1">(</span><span class="p" data-group-id="4661786973-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="4661786973-2">}</span><span class="p" data-group-id="4661786973-1">)</span><span class="w">
+</span><span class="p" data-group-id="4661786973-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4661786973-4">%</span><span class="nc" data-group-id="4661786973-4">Topic</span><span class="p" data-group-id="4661786973-4">{</span><span class="p" data-group-id="4661786973-4">}</span><span class="p" data-group-id="4661786973-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_topic</span><span class="p" data-group-id="4661786973-5">(</span><span class="p" data-group-id="4661786973-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="4661786973-6">}</span><span class="p" data-group-id="4661786973-5">)</span><span class="w">
+</span><span class="p" data-group-id="4661786973-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4661786973-8">%</span><span class="nc" data-group-id="4661786973-8">Ecto.Changeset</span><span class="p" data-group-id="4661786973-8">{</span><span class="p" data-group-id="4661786973-8">}</span><span class="p" data-group-id="4661786973-7">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="delete_comment/1">
+    <div class="detail-header">
+    <a href="#delete_comment/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete_comment(comment)</span>
+          </div>
+  <section class="docstring">
+<p>Deletes a Comment.</p>
+<h2 id="delete_comment/1-examples" class="section-heading">
+  <a href="#delete_comment/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">delete_comment</span><span class="p" data-group-id="6512260217-1">(</span><span class="n">comment</span><span class="p" data-group-id="6512260217-1">)</span><span class="w">
+</span><span class="p" data-group-id="6512260217-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6512260217-3">%</span><span class="nc" data-group-id="6512260217-3">Comment</span><span class="p" data-group-id="6512260217-3">{</span><span class="p" data-group-id="6512260217-3">}</span><span class="p" data-group-id="6512260217-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">delete_comment</span><span class="p" data-group-id="6512260217-4">(</span><span class="n">comment</span><span class="p" data-group-id="6512260217-4">)</span><span class="w">
+</span><span class="p" data-group-id="6512260217-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6512260217-6">%</span><span class="nc" data-group-id="6512260217-6">Ecto.Changeset</span><span class="p" data-group-id="6512260217-6">{</span><span class="p" data-group-id="6512260217-6">}</span><span class="p" data-group-id="6512260217-5">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="delete_topic/1">
+    <div class="detail-header">
+    <a href="#delete_topic/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete_topic(topic)</span>
+          </div>
+  <section class="docstring">
+<p>Deletes a Topic.</p>
+<h2 id="delete_topic/1-examples" class="section-heading">
+  <a href="#delete_topic/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">delete_topic</span><span class="p" data-group-id="1509296432-1">(</span><span class="n">topic</span><span class="p" data-group-id="1509296432-1">)</span><span class="w">
+</span><span class="p" data-group-id="1509296432-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1509296432-3">%</span><span class="nc" data-group-id="1509296432-3">Topic</span><span class="p" data-group-id="1509296432-3">{</span><span class="p" data-group-id="1509296432-3">}</span><span class="p" data-group-id="1509296432-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">delete_topic</span><span class="p" data-group-id="1509296432-4">(</span><span class="n">topic</span><span class="p" data-group-id="1509296432-4">)</span><span class="w">
+</span><span class="p" data-group-id="1509296432-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1509296432-6">%</span><span class="nc" data-group-id="1509296432-6">Ecto.Changeset</span><span class="p" data-group-id="1509296432-6">{</span><span class="p" data-group-id="1509296432-6">}</span><span class="p" data-group-id="1509296432-5">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="get_comment!/1">
+    <div class="detail-header">
+    <a href="#get_comment!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_comment!(id)</span>
+          </div>
+  <section class="docstring">
+<p>Gets a single comment.</p>
+<p>Raises <a href="https://hexdocs.pm/ecto/2.2.11/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Comment does not exist.</p>
+<h2 id="get_comment!/1-examples" class="section-heading">
+  <a href="#get_comment!/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_comment!</span><span class="p" data-group-id="5828711638-1">(</span><span class="mi">123</span><span class="p" data-group-id="5828711638-1">)</span><span class="w">
+</span><span class="p" data-group-id="5828711638-2">%</span><span class="nc" data-group-id="5828711638-2">Comment</span><span class="p" data-group-id="5828711638-2">{</span><span class="p" data-group-id="5828711638-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_comment!</span><span class="p" data-group-id="5828711638-3">(</span><span class="mi">456</span><span class="p" data-group-id="5828711638-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="get_topic!/1">
+    <div class="detail-header">
+    <a href="#get_topic!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_topic!(id)</span>
+          </div>
+  <section class="docstring">
+<p>Gets a single topic.</p>
+<p>Raises <a href="https://hexdocs.pm/ecto/2.2.11/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Topic does not exist.</p>
+<h2 id="get_topic!/1-examples" class="section-heading">
+  <a href="#get_topic!/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_topic!</span><span class="p" data-group-id="0190483312-1">(</span><span class="mi">123</span><span class="p" data-group-id="0190483312-1">)</span><span class="w">
+</span><span class="p" data-group-id="0190483312-2">%</span><span class="nc" data-group-id="0190483312-2">Topic</span><span class="p" data-group-id="0190483312-2">{</span><span class="p" data-group-id="0190483312-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_topic!</span><span class="p" data-group-id="0190483312-3">(</span><span class="mi">456</span><span class="p" data-group-id="0190483312-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="get_topic_comments!/1">
+    <div class="detail-header">
+    <a href="#get_topic_comments!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_topic_comments!(id)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</div>
+<div class="detail" id="get_topic_comments_user!/1">
+    <div class="detail-header">
+    <a href="#get_topic_comments_user!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_topic_comments_user!(id)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</div>
+<div class="detail" id="list_comments/0">
+    <div class="detail-header">
+    <a href="#list_comments/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">list_comments()</span>
+          </div>
+  <section class="docstring">
+<p>Returns the list of comments.</p>
+<h2 id="list_comments/0-examples" class="section-heading">
+  <a href="#list_comments/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_comments</span><span class="p" data-group-id="7560121680-1">(</span><span class="p" data-group-id="7560121680-1">)</span><span class="w">
+</span><span class="p" data-group-id="7560121680-2">[</span><span class="p" data-group-id="7560121680-3">%</span><span class="nc" data-group-id="7560121680-3">Comment</span><span class="p" data-group-id="7560121680-3">{</span><span class="p" data-group-id="7560121680-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="7560121680-2">]</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="list_topics/0">
+    <div class="detail-header">
+    <a href="#list_topics/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">list_topics()</span>
+          </div>
+  <section class="docstring">
+<p>Returns the list of topics.</p>
+<h2 id="list_topics/0-examples" class="section-heading">
+  <a href="#list_topics/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_topics</span><span class="p" data-group-id="1838486561-1">(</span><span class="p" data-group-id="1838486561-1">)</span><span class="w">
+</span><span class="p" data-group-id="1838486561-2">[</span><span class="p" data-group-id="1838486561-3">%</span><span class="nc" data-group-id="1838486561-3">Topic</span><span class="p" data-group-id="1838486561-3">{</span><span class="p" data-group-id="1838486561-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="1838486561-2">]</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="update_comment/2">
+    <div class="detail-header">
+    <a href="#update_comment/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update_comment(comment, attrs)</span>
+          </div>
+  <section class="docstring">
+<p>Updates a comment.</p>
+<h2 id="update_comment/2-examples" class="section-heading">
+  <a href="#update_comment/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_comment</span><span class="p" data-group-id="2213497896-1">(</span><span class="n">comment</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2213497896-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="2213497896-2">}</span><span class="p" data-group-id="2213497896-1">)</span><span class="w">
+</span><span class="p" data-group-id="2213497896-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2213497896-4">%</span><span class="nc" data-group-id="2213497896-4">Comment</span><span class="p" data-group-id="2213497896-4">{</span><span class="p" data-group-id="2213497896-4">}</span><span class="p" data-group-id="2213497896-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_comment</span><span class="p" data-group-id="2213497896-5">(</span><span class="n">comment</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2213497896-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="2213497896-6">}</span><span class="p" data-group-id="2213497896-5">)</span><span class="w">
+</span><span class="p" data-group-id="2213497896-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2213497896-8">%</span><span class="nc" data-group-id="2213497896-8">Ecto.Changeset</span><span class="p" data-group-id="2213497896-8">{</span><span class="p" data-group-id="2213497896-8">}</span><span class="p" data-group-id="2213497896-7">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="update_topic/2">
+    <div class="detail-header">
+    <a href="#update_topic/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update_topic(topic, attrs)</span>
+          </div>
+  <section class="docstring">
+<p>Updates a topic.</p>
+<h2 id="update_topic/2-examples" class="section-heading">
+  <a href="#update_topic/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_topic</span><span class="p" data-group-id="6425880449-1">(</span><span class="n">topic</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6425880449-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="6425880449-2">}</span><span class="p" data-group-id="6425880449-1">)</span><span class="w">
+</span><span class="p" data-group-id="6425880449-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6425880449-4">%</span><span class="nc" data-group-id="6425880449-4">Topic</span><span class="p" data-group-id="6425880449-4">{</span><span class="p" data-group-id="6425880449-4">}</span><span class="p" data-group-id="6425880449-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_topic</span><span class="p" data-group-id="6425880449-5">(</span><span class="n">topic</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6425880449-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="6425880449-6">}</span><span class="p" data-group-id="6425880449-5">)</span><span class="w">
+</span><span class="p" data-group-id="6425880449-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6425880449-8">%</span><span class="nc" data-group-id="6425880449-8">Ecto.Changeset</span><span class="p" data-group-id="6425880449-8">{</span><span class="p" data-group-id="6425880449-8">}</span><span class="p" data-group-id="6425880449-7">}</span></code></pre>
+  </section>
+</div>
+        </section>
+
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.1),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-a0c90688fa.js"></script>
+  
+  </body>
+</html>
+

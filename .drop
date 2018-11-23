@@ -1,0 +1,16 @@
+Ecto v2.2.11
+A database wrapper and language integrated query for Elixir.
+
+Available tasks:
+
+mix ecto.create        # Creates the repository storage
+mix ecto.drop          # Drops the repository storage
+mix ecto.dump          # Dumps the repository database structure
+mix ecto.gen.migration # Generates a new migration for the repo
+mix ecto.gen.repo      # Generates a new repository
+mix ecto.load          # Loads previously dumped database structure
+mix ecto.migrate       # Runs the repository migrations
+mix ecto.migrations    # Displays the repository migration status
+mix ecto.reset         # Alias defined in mix.exs
+mix ecto.rollback      # Rolls back the repository migrations
+mix ecto.setup         # Alias defined in mix.exs
