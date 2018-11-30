@@ -2,7 +2,7 @@
 
 Adaptation of the Discuss project by Stephen Grider on Udemy.
 
-The implementation is adapted for Phoenix 1.3 instead of 1.2.
+The implementation has been adapted to Phoenix 1.3 (from Phoenix 1.2).
 
 ##### Based on the course [The Complete Elixir and Phoenix Bootcamp](https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/) by Stephen Grider.
 
