@@ -7,13 +7,13 @@ defmodule Discuss.Accounts.User do
   @derive {Poison.Encoder, only: [:email]}
 
   schema "users" do
-    field :email, :string
-    field :provider, :string
-    field :token, :string
+    field(:email, :string)
+    field(:provider, :string)
+    field(:token, :string)
     # has_many :topics, Topic, foreign_key: :user_id
-    has_many :topics, Topic
+    has_many(:topics, Topic)
     # has_many :comments, Comment, foreign_key: :user_id
-    has_many :comments, Comment
+    has_many(:comments, Comment)
 
     timestamps()
   end

@@ -14,6 +14,7 @@ config :discuss, ecto_repos: [Discuss.Repo]
 # Configures the endpoint
 config :discuss, DiscussWeb.Endpoint,
   url: [host: "localhost"],
+  # Overridden with the prod secret config file.
   secret_key_base:
     "ZnYfmIVKCU5slVGAWOUknc+Z5fYY/8uXWzD6fFIzKylwDixE6qb2UaZoeEoupff2",
   render_errors: [view: DiscussWeb.ErrorView, accepts: ~w(html json)],
@@ -29,9 +30,19 @@ config :ueberauth, Ueberauth,
     github: {Ueberauth.Strategy.Github, []}
   ]
 
+# Overridden with secret config files.
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-  client_id: "Iv1.3a33e16896fcee3a",
-  client_secret: "8548c62836d3f1289fa9eb72e7e03540a9b0acb6"
+  client_id: "***",
+  client_secret: "***"
+
+# Overridden with secret config files.
+config :discuss, Discuss.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "***",
+  password: "***",
+  database: "***",
+  hostname: "***",
+  pool_size: 10
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

@@ -4,24 +4,24 @@ defmodule DiscussWeb.Router do
   alias DiscussWeb.Controllers.Plugs.SetUser
 
   pipeline :browser do
-    plug(:accepts, ["html"])
-    plug(:fetch_session)
-    plug(:fetch_flash)
-    plug(:protect_from_forgery)
-    plug(:put_secure_browser_headers)
-    plug(SetUser)
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+    plug SetUser
   end
 
   pipeline :api do
-    plug(:accepts, ["json"])
+    plug :accepts, ["json"]
   end
 
   scope "/", DiscussWeb do
     # Use the default browser stack
-    pipe_through(:browser)
+    pipe_through :browser
 
     # get "/", PageController, :index
-    get("/", TopicController, :index)
+    get "/", TopicController, :index
     # get    "/topics"         , TopicController, :index
     # get    "/topics/:id/edit", TopicController, :edit
     # get    "/topics/new"     , TopicController, :new
@@ -30,7 +30,7 @@ defmodule DiscussWeb.Router do
     # patch  "/topics/:id"     , TopicController, :update
     # put    "/topics/:id"     , TopicController, :update
     # delete "/topics/:id"     , TopicController, :delete
-    resources("/topics", TopicController)
+    resources "/topics", TopicController
 
     # topic_path GET    /                DiscussWeb.TopicController :index
     # topic_path GET    /topics          DiscussWeb.TopicController :index
@@ -44,11 +44,11 @@ defmodule DiscussWeb.Router do
   end
 
   scope "/auth", DiscussWeb do
-    pipe_through(:browser)
+    pipe_through :browser
 
-    get("/signout", AuthController, :sign_out)
-    get("/:provider", AuthController, :request)
-    get("/:provider/callback", AuthController, :callback)
+    get "/signout", AuthController, :sign_out
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
 
     # auth_path GET /auth/signout            DiscussWeb.AuthController :sign_out
     # auth_path GET /auth/:provider          DiscussWeb.AuthController :request

@@ -1,5 +1,5 @@
 defmodule DiscussWeb.Controllers.Plugs.SetUser do
-  import Plug.Conn
+  import Plug.Conn, only: [assign: 3, get_session: 2]
 
   alias Discuss.Accounts
   alias Plug.Conn

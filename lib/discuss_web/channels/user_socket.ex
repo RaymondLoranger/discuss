@@ -9,7 +9,9 @@ defmodule DiscussWeb.UserSocket do
 
   @spec connect(map, Socket.t()) :: {:ok, Socket.t()} | :error
   def connect(%{"token" => token} = _params, socket) do
-    case Phoenix.Token.verify(socket, "user salt", token) do
+    max_age = 3600 * 2
+
+    case Phoenix.Token.verify(socket, "user salt", token, max_age: max_age) do
       {:ok, user_id} -> {:ok, assign(socket, :user_id, user_id)}
       {:error, _reason} -> :error
     end

@@ -6,6 +6,7 @@ defmodule DiscussWeb.AuthController do
   alias DiscussWeb.AuthFallbackController
   alias Ecto.Changeset
   alias Plug.Conn
+  alias Ueberauth.Auth
 
   plug Ueberauth
 
@@ -13,11 +14,14 @@ defmodule DiscussWeb.AuthController do
 
   @spec callback(Conn.t(), map) :: Conn.t()
   def callback(
-        %Conn{assigns: %{ueberauth_auth: %Ueberauth.Auth{} = auth}} = conn,
+        %Conn{assigns: %{ueberauth_auth: %Auth{} = auth}} = conn,
         %{"provider" => provider} = _params
       ) do
-    %{token: auth.credentials.token, email: auth.info.email, provider: provider}
-    |> sign_in(conn)
+    sign_in(conn, %{
+      token: auth.credentials.token,
+      email: auth.info.email,
+      provider: provider
+    })
   end
 
   def callback(conn, params) do
@@ -38,13 +42,12 @@ defmodule DiscussWeb.AuthController do
 
   ## Private functions
 
-  @spec sign_in(map, Conn.t()) :: Conn.t()
-  defp sign_in(user_attrs, conn) do
-    with {:ok, %User{id: id, email: email} = _user} <-
-           create_or_get_user(user_attrs) do
+  @spec sign_in(Conn.t(), map) :: Conn.t()
+  defp sign_in(conn, user_attrs) do
+    with {:ok, %User{} = user} <- create_or_get_user(user_attrs) do
       conn
-      |> put_flash(:info, "Welcome back #{user_name(email)}!")
-      |> put_session(:user_id, id)
+      |> put_flash(:info, "Welcome back #{user_name(user.email)}!")
+      |> put_session(:user_id, user.id)
       |> redirect(to: topic_path(conn, :index))
     end
   end

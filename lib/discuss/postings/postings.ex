@@ -98,7 +98,7 @@ defmodule Discuss.Postings do
   end
 
   @doc """
-  Returns an `%Ecto.Changeset{}` for tracking topic changes.
+  Returns an `%Ecto.Changeset {}` for tracking topic changes.
 
   ## Examples
 

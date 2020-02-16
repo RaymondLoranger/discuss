@@ -6,11 +6,11 @@ defmodule DiscussWeb.TopicFallbackController do
 
   @spec call(Conn.t(), tuple) :: Conn.t()
   def call(conn, {:error, %Changeset{action: :insert} = changeset}) do
-    render(conn, "new.html", changeset: changeset)
+    render conn, "new.html", changeset: changeset
   end
 
   def call(conn, {:error, %Changeset{action: :update} = changeset}) do
-    render(conn, "edit.html", changeset: changeset, topic: changeset.data)
+    render conn, "edit.html", changeset: changeset, topic: changeset.data
   end
 
   def call(conn, {:error, %Changeset{action: :delete} = _changeset}) do

@@ -8,11 +8,11 @@ defmodule Discuss.Postings.Comment do
   @derive {Poison.Encoder, only: [:content, :user]}
 
   schema "comments" do
-    field :content, :string
+    field(:content, :string)
     # belongs_to :user, User, foreign_key: :user_id
-    belongs_to :user, User
+    belongs_to(:user, User)
     # belongs_to :topic, Topic, foreign_key: :topic_id
-    belongs_to :topic, Topic
+    belongs_to(:topic, Topic)
 
     timestamps()
   end

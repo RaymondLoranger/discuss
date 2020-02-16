@@ -9,7 +9,7 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 socket.connect()
 
 // Now that you are connected, you can join channels with a topic:
-const wireCommentsChannel = (topicId) => {
+const wireCommentsChannel = topicId => {
   let channel = socket.channel(`comments:${topicId}`, {})
   channel.join()
     .receive("ok", resp => {
@@ -22,7 +22,7 @@ const wireCommentsChannel = (topicId) => {
   document.querySelector("#add-comment").addEventListener("click", () => {
     const content = document.querySelector("#comment").value
     channel.push("comments:add", {
-      content: content
+      content
     })
   })
   channel.on(`comments:${topicId}:new`, renderComment)

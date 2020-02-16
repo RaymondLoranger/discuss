@@ -16,19 +16,19 @@ defmodule DiscussWeb.TopicController do
   @spec index(Conn.t(), map) :: Conn.t()
   def index(conn, _params) do
     topics = Postings.list_topics()
-    render(conn, "index.html", topics: topics)
+    render conn, "index.html", topics: topics
   end
 
   @spec show(Conn.t(), map) :: Conn.t()
   def show(conn, %{"id" => topic_id} = _params) do
     topic = Postings.get_topic!(topic_id)
-    render(conn, "show.html", topic: topic)
+    render conn, "show.html", topic: topic
   end
 
   @spec new(Conn.t(), map) :: Conn.t()
   def new(conn, _params) do
     changeset = Postings.change_topic(%Topic{})
-    render(conn, "new.html", changeset: changeset)
+    render conn, "new.html", changeset: changeset
   end
 
   @spec create(Conn.t(), map) :: Conn.t()
@@ -47,7 +47,7 @@ defmodule DiscussWeb.TopicController do
   def edit(conn, %{"id" => topic_id} = _params) do
     topic = Postings.get_topic!(topic_id)
     changeset = Postings.change_topic(topic)
-    render(conn, "edit.html", changeset: changeset, topic: topic)
+    render conn, "edit.html", changeset: changeset, topic: topic
   end
 
   @spec update(Conn.t(), map) :: Conn.t()
@@ -74,8 +74,8 @@ defmodule DiscussWeb.TopicController do
   ## Private functions
 
   @spec check_topic_owner(Conn.t(), Plug.opts()) :: Conn.t()
-  defp check_topic_owner(conn, _opts) do
-    if Postings.get_topic!(conn.params["id"]).user_id == conn.assigns.user.id do
+  defp check_topic_owner(%Conn{params: %{"id" => topic_id}} = conn, _opts) do
+    if Postings.get_topic!(topic_id).user_id == conn.assigns.user.id do
       conn
     else
       conn
